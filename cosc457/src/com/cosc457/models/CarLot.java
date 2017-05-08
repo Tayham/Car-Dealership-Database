@@ -45,8 +45,8 @@ public class CarLot {
 
     @Override
     public String toString() {
-        return  "Address:" + address + '\'' +
-                ", capacity='" + capacity + '\'' +
-                ", name='" + name + '\'';
+        return  "Address: " + address  +
+                ", Capacity: " + capacity +
+                ", Name: " + name;
     }
 }

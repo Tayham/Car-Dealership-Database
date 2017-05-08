@@ -36,13 +36,12 @@ public class CarLotApi {
         }
     }
 
+
     public static ArrayList<CarLot> getAllCarLots(){
         ArrayList<CarLot> result = new ArrayList<CarLot>();
-        System.out.println("getting carlot entries");
         String query = "SELECT * FROM CarLot";
         try {
             for(Object o : database.retrieve(query, CarLot.class)){
-                System.out.println("added entry");
                 result.add((CarLot)o);
             }
         } catch (SQLException e) {
