@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
  */
 public class DeleteEmployee extends JPanel {
     private JPanel panel1;
-    private JLabel fNLabel;
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JButton deleteButton;
