@@ -115,6 +115,6 @@ public class SalesPeople {
 
     @Override
     public String toString() {
-        return firstName + " " + lastName + " " + " " + salary  + " Date of Birth: " + dob  + " Hire Date: " + hireDate  + " " + phone + " " + email;
+        return "First Name: " +firstName+ "\n" + "Last Name: " +lastName+ "Salary: " + salary+ " Date of Birth: " + dob+ " Hire Date: " +hireDate+ "Phone Number: " +phone+ "Email: " +email;
     }
 }

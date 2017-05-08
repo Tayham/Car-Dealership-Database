@@ -7,18 +7,6 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="b3040" class="javax.swing.JButton" binding="backButton" default-binding="true">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
-        </constraints>
-        <properties>
-          <horizontalAlignment value="2"/>
-          <text value="Back"/>
-          <verticalAlignment value="1"/>
-          <verticalTextPosition value="0"/>
-        </properties>
-      </component>
       <hspacer id="ee519">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
@@ -38,8 +26,27 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <scrollpane id="47241">
+            <constraints/>
+            <properties/>
+            <border type="none"/>
+            <children/>
+          </scrollpane>
+        </children>
       </scrollpane>
+      <component id="b3040" class="javax.swing.JButton" binding="backButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="2"/>
+          <text value="Back"/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="0"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

@@ -29,7 +29,6 @@ public class Database {
         }catch(Exception e){
             System.out.println(e);
         }
-
     }
 
     public void initializeDatabase() throws SQLException {
@@ -68,8 +67,6 @@ public class Database {
                 results.add(parseCar(set));
             }else if(type.equals(CarLot.class)){
                 results.add(parseCarLot(set));
-            }else if(type.equals(Shift.class)){
-                results.add(parseShift(set));
             }
 
         }
@@ -87,8 +84,5 @@ public class Database {
     }
     private CarLot parseCarLot(ResultSet set) throws SQLException{
         return new CarLot(set.getString("Address"), set.getString("TotalCapacity"), set.getString("Name"));
-    }
-    private Shift parseShift(ResultSet set) throws SQLException{
-        return new Shift(set.getInt("ID"), set.getInt("employeeID"), set.getInt("workDay"), set.getInt("scheduleID"), set.getTime("startTime"), set.getTime("endTime"));
     }
 }

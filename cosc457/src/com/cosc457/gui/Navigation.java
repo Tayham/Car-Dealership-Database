@@ -1,6 +1,6 @@
 package com.cosc457.gui;
 
-//import com.cosc457.ScheduleBuilder;
+
 import com.cosc457.data.SeedData;
 import net.miginfocom.swing.MigLayout;
 
@@ -24,7 +24,7 @@ public class Navigation extends JPanel{
     AddCarLot AddCarLot = new AddCarLot();
     DeleteCarLot DeleteCarLot = new DeleteCarLot();
     ViewCarLot ViewCarLot = new ViewCarLot();
-    ViewSchedules viewSchedules = new ViewSchedules();
+
 
     public static Navigation INSTANCE;
     private JButton addEmployeeButton;
@@ -39,7 +39,6 @@ public class Navigation extends JPanel{
 
     private BufferedImage myPicture;
 
-//    private JButton generateSeedDataButton;
 
     private Navigation(){
         super(new BorderLayout());
@@ -74,8 +73,7 @@ public class Navigation extends JPanel{
         addCarLotButton   = new JButton("  Add CarLot  ");
         deleteCarLotButton = new JButton(" Delete CarLot");
         viewCarLotButton = new JButton("  View CarLots ");
-//        generateSeedDataButton  = new JButton("Generate Seed Data");
-//        viewSchedulesButton     = new JButton("   View Schedule  ");
+
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         navigationPanel.add(picLabel, "height 150, width 150");
         navigationPanel.add(addEmployeeButton, "align center, width 50:150:150");
@@ -87,8 +85,6 @@ public class Navigation extends JPanel{
         navigationPanel.add(addCarLotButton, "align center, width 50:150:150");
         navigationPanel.add(deleteCarLotButton, "align center, width 50:150:150");
         navigationPanel.add(viewCarLotButton, "align center, width 50:150:150");
-//        navigationPanel.add(generateSeedDataButton, "align center, width 50:150:150");
-//        navigationPanel.add(viewSchedulesButton, "align center, width 50:150:150");
     }
 
     private void initListeners(){
@@ -171,15 +167,7 @@ public class Navigation extends JPanel{
                 redraw();
             }
         });
-////        viewSchedulesButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent actionEvent) {
-//                remove(getComponent(0));
-//                add(viewSchedules.getPanel());
-//                viewSchedules.load();
-//                redraw();
-//            }
-//        });
+
     }
 
     public void goBack(JPanel p){
