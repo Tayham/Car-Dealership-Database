@@ -1,7 +1,7 @@
 package com.cosc457.gui;
 
-import com.cosc457.data.SalesPeopleApi;
-import com.cosc457.models.SalesPeople;
+import com.cosc457.data.CustomerApi;
+import com.cosc457.models.Customer;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -9,20 +9,23 @@ import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
- // Created by David on 12/11/2016.
-
-
-public class DeleteEmployee extends JPanel {
+/**
+ * Created by Taylor on 5/8/2017.
+ */
+public class AddCustomer extends JPanel{
     private JPanel panel1;
+    private JTextField ssnField;
     private JTextField firstNameField;
     private JTextField lastNameField;
-    private JButton deleteButton;
+    private JButton saveButton;
     private JButton backButton;
+    private JTextField phoneField;
+    private JTextField emailField;
 
-    public DeleteEmployee(){
-        initDeleteButton();
-        deleteButton.setEnabled(false);
+
+    public AddCustomer(){
+        initSaveButton();
+        saveButton.setEnabled(false);
 
         firstNameField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -44,11 +47,11 @@ public class DeleteEmployee extends JPanel {
             {
                 if (firstNameField.getText().equals("") || lastNameField.getText().equals(""))
                 {
-                    deleteButton.setEnabled(false);
+                    saveButton.setEnabled(false);
                 }
                 else
                 {
-                    deleteButton.setEnabled(true);
+                    saveButton.setEnabled(true);
                 }
             }
         });
@@ -73,11 +76,11 @@ public class DeleteEmployee extends JPanel {
             {
                 if (firstNameField.getText().equals("") || lastNameField.getText().equals(""))
                 {
-                    deleteButton.setEnabled(false);
+                    saveButton.setEnabled(false);
                 }
                 else
                 {
-                    deleteButton.setEnabled(true);
+                    saveButton.setEnabled(true);
                 }
             }
         });
@@ -94,13 +97,14 @@ public class DeleteEmployee extends JPanel {
         return panel1;
     }
 
-    private void initDeleteButton(){
-        deleteButton.addActionListener(new ActionListener() {
+    private void initSaveButton(){
+        saveButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String employeeDeleted = firstNameField.getText() + " " + lastNameField.getText() + " has been removed from the database.";
-                JOptionPane.showMessageDialog(null, employeeDeleted);
-                SalesPeopleApi.deleteSalesPeople(new SalesPeople(firstNameField.getText(), lastNameField.getText()));
+                String newCustomerCreated = firstNameField.getText() + " " + lastNameField.getText() + " has been added to the database.";
+                JOptionPane.showMessageDialog(null, newCustomerCreated);
+                CustomerApi.saveCustomer(new Customer(ssnField.getText(), firstNameField.getText(), lastNameField.getText(), phoneField.getText(), emailField.getText()));
             }
         });
     }

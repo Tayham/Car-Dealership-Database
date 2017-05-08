@@ -19,6 +19,7 @@ public class AddEmployee extends JPanel{
     private JButton backButton;
     private JTextField dobField;
     private JTextField salaryField;
+    private JTextField ssnField;
     private JTextField phoneField;
     private JTextField emailField;
 

@@ -67,7 +67,10 @@ public class Database {
                 results.add(parseCar(set));
             }else if(type.equals(CarLot.class)){
                 results.add(parseCarLot(set));
-            }
+            }else if(type.equals(Customer.class)){
+                results.add(parseCustomer(set));
+            }else if(type.equals(Invoice.class)){
+            results.add(parseInvoice(set));        }
 
         }
         return results;
@@ -84,5 +87,11 @@ public class Database {
     }
     private CarLot parseCarLot(ResultSet set) throws SQLException{
         return new CarLot(set.getString("Address"), set.getString("TotalCapacity"), set.getString("Name"));
+    }
+    private Customer parseCustomer(ResultSet set) throws SQLException{
+        return new Customer(set.getString("SSN"), set.getString("FirstName"), set.getString("LastName"), set.getString("PhoneNumber"), set.getString("Email"));
+    }
+    private Invoice parseInvoice(ResultSet set) throws SQLException{
+        return new Invoice(set.getInt("InvoiceID"), set.getString("BuyPrice"), set.getString("SellPrice"), set.getString("Date"), set.getString("Signature"), set.getInt("EmployeeID"), set.getString("SSN"), set.getString("VIN"));
     }
 }
