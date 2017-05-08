@@ -64,19 +64,19 @@ public class CarApi {
         return null;
     }
 //    public static Car getEmployeeByName(String name){
-//        for(Car c : CarApi.getAllEmployees()){
-//            if(c.getFullName().equals(name)){
+//        for(Car c : CarApi.getAllCars()){
+//            if(c.ge().equals(name)){
 //                return c;
 //            }
 //        }
 //        return null;
 //    }
 
-//    public static HashMap<String, Car> getEmployeeIdMap(){
-//        HashMap<Integer, Car> map = new HashMap<Integer, Car>();
-//        for(Car c : getAllCars()){
-//            map.put(c.getVin(), c);
-//        }
-//        return map;
-//    }
+    public static HashMap<String, Car> getCarIdMap(){
+        HashMap<String, Car> map = new HashMap<String, Car>();
+        for(Car c : getAllCars()){
+            map.put(c.getVin(), c);
+        }
+        return map;
+    }
 }
