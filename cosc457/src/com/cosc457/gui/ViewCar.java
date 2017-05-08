@@ -1,7 +1,9 @@
 package com.cosc457.gui;
 
-import com.cosc457.data.CarLotApi;
-import com.cosc457.models.CarLot;
+import com.cosc457.data.CarApi;
+import com.cosc457.data.SalesPeopleApi;
+import com.cosc457.models.Car;
+import com.cosc457.models.SalesPeople;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,14 +12,12 @@ import java.awt.event.ActionListener;
 /**
  * Created by Taylor on 5/7/2017.
  */
-public class ViewCarLot {
+public class ViewCar {
     private JPanel panel1;
     private JButton backButton;
-    private JScrollPane carLots;
+    private JScrollPane cars;
 
-    //If results not showing up add the object type in the database class
-
-    public ViewCarLot(){
+    public ViewCar(){
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -29,16 +29,15 @@ public class ViewCarLot {
     public JPanel getPanel(){
         return panel1;
     }
-
     public void load(){
         JPanel wrapper = new JPanel();
         StringBuilder content = new StringBuilder("<html>");
-        for(CarLot lot : CarLotApi.getAllCarLots()){
-            content.append("<p>" + lot.toString() + "</p><br>");
+        for(Car c : CarApi.getAllCars()){
+            content.append("<p>" + c.toString() + "</p><br>");
         }
         content.append("</html>");
         wrapper.add(new JLabel(content.toString()));
-        carLots.getViewport().add(wrapper);
+        cars.getViewport().add(wrapper);
     }
 
 
