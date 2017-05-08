@@ -174,7 +174,7 @@ public class AddCar extends JPanel {
                 public void actionPerformed(ActionEvent actionEvent) {
                     String newCar = vinField.getText() + " " + makeField.getText() + modelField.getText() + " has been added to the database.";
                     JOptionPane.showMessageDialog(null, newCar);
-                    CarApi.saveCar(new Car(vinField.getText(), yearField.getText(), trimField.getText(), modelField.getText(),incolorField.getText(),excolorField.getText(), makeField.getText(), mileageField.getText(), transmissionField.getText(), drivetrainField.getText(), engineField.getText(), bodytypeField.getText(), askingField.getText(), maintenceField.getText(), datestockField.getText(), readysaleField.getText(), statusField.getText(),pspaceField.getText()));
+                    CarApi.saveCar(new Car(vinField.getText(), yearField.getText(), trimField.getText(), modelField.getText(),makeField.getText(), excolorField.getText(),incolorField.getText(), mileageField.getText(), transmissionField.getText(), drivetrainField.getText(), engineField.getText(), bodytypeField.getText(), askingField.getText(), maintenceField.getText(), datestockField.getText(), readysaleField.getText(), statusField.getText(),pspaceField.getText()));
                 }
             });
         }

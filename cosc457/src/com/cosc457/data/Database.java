@@ -1,9 +1,6 @@
 package com.cosc457.data;
 
-import com.cosc457.models.Availability;
-import com.cosc457.models.SalesPeople;
-import com.cosc457.models.Schedule;
-import com.cosc457.models.Shift;
+import com.cosc457.models.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -67,8 +64,8 @@ public class Database {
         while(set.next()){
             if(type.equals(SalesPeople.class)){
                 results.add(parseEmployee(set));
-            }else if(type.equals(Availability.class)){
-                results.add(parseAvailability(set));
+            }else if(type.equals(Car.class)){
+                results.add(parseCar(set));
             }else if(type.equals(Schedule.class)){
                 results.add(parseSchedule(set));
             }else if(type.equals(Shift.class)){
@@ -85,8 +82,8 @@ public class Database {
         return new SalesPeople(set.getString("FirstName"), set.getString("LastName"), set.getString("Salary"), set.getString("DateofBirth"),set.getString("HireDate"),set.getString("PhoneNumber"),set.getString("Email"));
 //        return new SalesPeople(set.getInt("ID"),set.getString("FirstName"), set.getString("LastName"));
     }
-    private Availability parseAvailability(ResultSet set) throws SQLException{
-        return new Availability(set.getInt("ID"), set.getInt("employeeID"),set.getInt("weekDay"), set.getTime("startTime"), set.getTime("endTime"));
+    private Car parseCar(ResultSet set) throws SQLException{
+        return new Car(set.getString("VIN"), set.getString("Year"), set.getString("Trim"), set.getString("Model"),set.getString("Make"), set.getString("ExteriorColor"), set.getString("InteriorColor"), set.getString("Mileage"), set.getString("Transmission"), set.getString("DriveTrain"), set.getString("Engine"), set.getString("BodyType"), set.getString("AskingPrice"), set.getString("MaintenanceCost"), set.getString("DateinStock"), set.getString("ReadyforSale"), set.getString("Status"), set.getString("ParkingSpaceNum"));
     }
     private Schedule parseSchedule(ResultSet set) throws SQLException{
         return new Schedule(set.getInt("ID"), set.getDate("startDate"), set.getDate("endDate"));

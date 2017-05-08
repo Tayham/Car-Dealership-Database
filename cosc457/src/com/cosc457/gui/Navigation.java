@@ -19,8 +19,8 @@ public class Navigation extends JPanel{
     DeleteEmployee deleteEmployee = new DeleteEmployee();
     ViewEmployee viewEmployee = new ViewEmployee();
     AddCar AddCar = new AddCar();
-    ViewAvailability viewAvailability = new ViewAvailability();
-//    CreateSchedule createSchedule = new CreateSchedule();
+    DeleteCar DeleteCar = new DeleteCar();
+    ViewCar ViewCar = new ViewCar();
     ViewSchedules viewSchedules = new ViewSchedules();
 
     public static Navigation INSTANCE;
@@ -28,8 +28,8 @@ public class Navigation extends JPanel{
     private JButton deleteEmployeeButton;
     private JButton viewEmployeesButton;
     private JButton addCarButton;
-    private JButton viewAvailabilityButton;
-    private JButton createScheduleButton;
+    private JButton deleteCarButton;
+    private JButton viewCarButton;
     private JButton viewSchedulesButton;
     private BufferedImage myPicture;
 
@@ -63,9 +63,9 @@ public class Navigation extends JPanel{
         deleteEmployeeButton    = new JButton(" Delete Salespeople");
         viewEmployeesButton     = new JButton("  View Salespeople  ");
         addCarButton   = new JButton("  Add Car  ");
-        viewAvailabilityButton  = new JButton(" View Availability");
+        deleteCarButton = new JButton(" Delete Car");
+        viewCarButton = new JButton("  View Car ");
         generateSeedDataButton  = new JButton("Generate Seed Data");
-        createScheduleButton    = new JButton("  Create Schedule ");
         viewSchedulesButton     = new JButton("   View Schedule  ");
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         navigationPanel.add(picLabel, "height 150, width 150");
@@ -73,10 +73,10 @@ public class Navigation extends JPanel{
         navigationPanel.add(deleteEmployeeButton, "align center, width 50:150:150");
         navigationPanel.add(viewEmployeesButton, "align center, width 50:150:150");
         navigationPanel.add(addCarButton, "align center, width 50:150:150");
-        navigationPanel.add(viewAvailabilityButton, "align center, width 50:150:150");
-        navigationPanel.add(generateSeedDataButton, "align center, width 50:150:150");
-        navigationPanel.add(createScheduleButton, "align center, width 50:150:150");
-        navigationPanel.add(viewSchedulesButton, "align center, width 50:150:150");
+        navigationPanel.add(deleteCarButton, "align center, width 50:150:150");
+        navigationPanel.add(viewCarButton, "align center, width 50:150:150");
+//        navigationPanel.add(generateSeedDataButton, "align center, width 50:150:150");
+//        navigationPanel.add(viewSchedulesButton, "align center, width 50:150:150");
     }
 
     private void initListeners(){
@@ -113,41 +113,40 @@ public class Navigation extends JPanel{
                 redraw();
             }
         });
-        viewAvailabilityButton.addActionListener(new ActionListener() {
+        deleteCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 remove(getComponent(0));
-                add(viewAvailability.getPanel());
-                viewAvailability.load();
+                add(DeleteCar.getPanel());
                 redraw();
             }
         });
-        generateSeedDataButton.addActionListener(new ActionListener() {
+//        generateSeedDataButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent actionEvent) {
+//                SeedData.seed();
+//                JLabel done = new JLabel("Done - seed data has been generated");
+//                navigationPanel.add(done);
+//            }
+//        });
+        viewCarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                SeedData.seed();
-                JLabel done = new JLabel("Done - seed data has been generated");
-                navigationPanel.add(done);
+                remove(getComponent(0));
+                add(ViewCar.getPanel());
+                ViewCar.load();
+                redraw();
             }
         });
-        createScheduleButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
+//        viewSchedulesButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent actionEvent) {
 //                remove(getComponent(0));
-//                add(createSchedule.getPanel());
-//                createSchedule.load();
+//                add(viewSchedules.getPanel());
+//                viewSchedules.load();
 //                redraw();
-            }
-        });
-        viewSchedulesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                remove(getComponent(0));
-                add(viewSchedules.getPanel());
-                viewSchedules.load();
-                redraw();
-            }
-        });
+//            }
+//        });
     }
 
     public void goBack(JPanel p){

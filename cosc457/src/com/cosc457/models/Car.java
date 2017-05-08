@@ -23,10 +23,10 @@ public class Car {
     private String status;
     private String pspace;
 
+
     @Override
     public String toString() {
-        return "Car{" +
-                "vin='" + vin + '\'' +
+        return  "vin='" + vin + '\'' +
                 ", year='" + year + '\'' +
                 ", trim='" + trim + '\'' +
                 ", model='" + model + '\'' +
@@ -63,7 +63,7 @@ public class Car {
         this.incolor = incolor;
     }
 
-    public Car(String vin, String year, String trim, String model, String incolor, String excolor, String make, String mileage, String transmission, String drivetrain, String engine, String bodytype, String asking, String maintence, String datestock, String readysale, String status, String pspace) {
+    public Car(String vin, String year, String trim, String model,  String make, String excolor, String incolor, String mileage, String transmission, String drivetrain, String engine, String bodytype, String asking, String maintence, String datestock, String readysale, String status, String pspace) {
         this.vin = vin;
         this.year = year;
         this.trim = trim;
@@ -83,7 +83,9 @@ public class Car {
         this.status = status;
         this.pspace = pspace;
     }
-
+    public Car(String vin) {
+        this.vin = vin;
+    }
     public String getVin() {
         return vin;
     }
