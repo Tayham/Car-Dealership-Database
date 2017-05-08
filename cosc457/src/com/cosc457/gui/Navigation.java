@@ -1,7 +1,4 @@
 package com.cosc457.gui;
-
-//import com.cosc457.ScheduleBuilder;
-import com.cosc457.data.SeedData;
 import com.cosc457.models.*;
 import net.miginfocom.swing.MigLayout;
 
@@ -28,6 +25,7 @@ public class Navigation extends JPanel{
     AddCarLot AddCarLot = new AddCarLot();
     DeleteCarLot DeleteCarLot = new DeleteCarLot();
     ViewCarLot ViewCarLot = new ViewCarLot();
+
 
     AddCustomer AddCustomer = new AddCustomer();
     DeleteCustomer DeleteCustomer = new DeleteCustomer();
@@ -61,7 +59,6 @@ public class Navigation extends JPanel{
     private JLabel CarLotLabel;
     private JLabel InvoiceLabel;
 
-//    private JButton generateSeedDataButton;
 
     private Navigation(){
         super(new BorderLayout());
@@ -103,6 +100,7 @@ public class Navigation extends JPanel{
         deleteCarLotButton = new JButton(" Delete CarLot");
         viewCarLotButton = new JButton("  View CarLots ");
 
+
         CustomerLabel = new JLabel("Customer Options",JLabel.CENTER);
         addCustomerButton   = new JButton("  Add Customer  ");
         deleteCustomerButton = new JButton(" Delete Customer");
@@ -113,7 +111,7 @@ public class Navigation extends JPanel{
         addInvoiceButton   = new JButton("  Add Invoice  ");
         deleteInvoiceButton = new JButton(" Delete Invoice");
         viewInvoiceButton = new JButton("  View Invoices ");
-;
+
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
         navigationPanel.add(picLabel, "height 150, width 150");
 
@@ -280,15 +278,6 @@ public class Navigation extends JPanel{
                 redraw();
             }
         });
-////        viewSchedulesButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent actionEvent) {
-//                remove(getComponent(0));
-//                add(viewSchedules.getPanel());
-//                viewSchedules.load();
-//                redraw();
-//            }
-//        });
     }
 
     public void goBack(JPanel p){

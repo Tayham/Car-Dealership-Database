@@ -29,7 +29,6 @@ public class Database {
         }catch(Exception e){
             System.out.println(e);
         }
-
     }
 
     public void initializeDatabase() throws SQLException {

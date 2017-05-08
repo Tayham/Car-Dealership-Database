@@ -9,9 +9,10 @@ import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * Created by Rex on 12/11/2016.
- */
+
+ // Created by David on 12/11/2016.
+
+
 public class DeleteEmployee extends JPanel {
     private JPanel panel1;
     private JTextField firstNameField;

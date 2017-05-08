@@ -37,7 +37,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties/>
-        <border type="none"/>
+        <border type="none" title="Employee's"/>
         <children/>
       </scrollpane>
     </children>

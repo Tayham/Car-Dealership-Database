@@ -10,13 +10,14 @@ public class SalesPeople {
     private String phone;
     private String email;
 
-    public SalesPeople(int ID, String firstName, String lastName){
+
+    public SalesPeople(int ID, String firstName, String lastName) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public SalesPeople(String firstName, String lastName, String salary, String dob, String hireDate, String phone, String email){
+    public SalesPeople(String firstName, String lastName, String salary, String dob, String hireDate, String phone, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
@@ -26,7 +27,7 @@ public class SalesPeople {
         this.email = email;
     }
 
-    public SalesPeople(int ID, String firstName, String lastName, String salary, String dob, String hireDate, String phone, String email){
+    public SalesPeople(int ID, String firstName, String lastName, String salary, String dob, String hireDate, String phone, String email) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -108,13 +109,36 @@ public class SalesPeople {
     }
 
 
-    public String getFullName(){
+    public String getFullName() {
         return firstName + " " + lastName;
     }
 
 
     @Override
     public String toString() {
-        return firstName + " " + lastName + " " + " " + salary  + " Date of Birth: " + dob  + " Hire Date: " + hireDate  + " " + phone + " " + email;
+        return "First Name: " +firstName+ " Last Name: " + lastName+ " Salary: " + salary+ " Date of Birth: " + dob +" Hire Date: " + hireDate + " Phone Number: " + phone+" Email: " + email;
     }
 }
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
