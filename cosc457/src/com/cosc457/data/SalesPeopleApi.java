@@ -45,33 +45,4 @@ public class SalesPeopleApi {
 
         return result;
     }
-
-    public static SalesPeople getById(int id){
-        String query = "SELECT * FROM SalesPeople WHERE ID = " + id;
-        try {
-            for(Object o : database.retrieve(query, SalesPeople.class)){
-                return (SalesPeople)o;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-    public static SalesPeople getEmployeeByName(String name){
-        for(SalesPeople e : SalesPeopleApi.getAllEmployees()){
-            if(e.getFullName().equals(name)){
-                return e;
-            }
-        }
-        return null;
-    }
-
-    public static HashMap<Integer, SalesPeople> getEmployeeIdMap(){
-        HashMap<Integer, SalesPeople> map = new HashMap<Integer, SalesPeople>();
-        for(SalesPeople e : getAllEmployees()){
-            map.put(e.getID(), e);
-        }
-        return map;
-    }
-
 }

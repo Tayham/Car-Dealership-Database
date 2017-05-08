@@ -1,7 +1,7 @@
 package com.cosc457.gui;
 
 
-import com.cosc457.data.SeedData;
+//import com.cosc457.data.SeedData;
 import net.miginfocom.swing.MigLayout;
 
 import javax.imageio.ImageIO;
