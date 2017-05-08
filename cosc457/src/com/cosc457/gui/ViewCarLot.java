@@ -15,6 +15,7 @@ public class ViewCarLot {
     private JButton backButton;
     private JScrollPane carLots;
 
+    //If results not showing up add the object type in the database class
     public ViewCarLot(){
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -27,11 +28,14 @@ public class ViewCarLot {
     public JPanel getPanel(){
         return panel1;
     }
+
     public void load(){
+        System.out.println("loaded");
         JPanel wrapper = new JPanel();
         StringBuilder content = new StringBuilder("<html>");
-        for(CarLot c : CarLotApi.getAllCarLots()){
-            content.append("<p>" + c.toString() + "</p><br>");
+        for(CarLot lot : CarLotApi.getAllCarLots()){
+            content.append("<p>" + lot.toString() + "</p><br>");
+            System.out.println(lot.toString());
         }
         content.append("</html>");
         wrapper.add(new JLabel(content.toString()));

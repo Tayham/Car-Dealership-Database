@@ -43,6 +43,7 @@ public class CarApi {
         String query = "SELECT * FROM Car";
         try {
             for(Object o : database.retrieve(query, Car.class)){
+//                System.out.println("added entry");
                 result.add((Car)o);
             }
         } catch (SQLException e) {
