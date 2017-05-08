@@ -66,8 +66,8 @@ public class Database {
                 results.add(parseEmployee(set));
             }else if(type.equals(Car.class)){
                 results.add(parseCar(set));
-            }else if(type.equals(Schedule.class)){
-                results.add(parseSchedule(set));
+            }else if(type.equals(CarLot.class)){
+                results.add(parseCarLot(set));
             }else if(type.equals(Shift.class)){
                 results.add(parseShift(set));
             }
@@ -85,10 +85,9 @@ public class Database {
     private Car parseCar(ResultSet set) throws SQLException{
         return new Car(set.getString("VIN"), set.getString("Year"), set.getString("Trim"), set.getString("Model"),set.getString("Make"), set.getString("ExteriorColor"), set.getString("InteriorColor"), set.getString("Mileage"), set.getString("Transmission"), set.getString("DriveTrain"), set.getString("Engine"), set.getString("BodyType"), set.getString("AskingPrice"), set.getString("MaintenanceCost"), set.getString("DateinStock"), set.getString("ReadyforSale"), set.getString("Status"), set.getString("ParkingSpaceNum"));
     }
-    private Schedule parseSchedule(ResultSet set) throws SQLException{
-        return new Schedule(set.getInt("ID"), set.getDate("startDate"), set.getDate("endDate"));
+    private CarLot parseCarLot(ResultSet set) throws SQLException{
+        return new CarLot(set.getString("Address"), set.getString("TotalCapacity"), set.getString("Name"));
     }
-
     private Shift parseShift(ResultSet set) throws SQLException{
         return new Shift(set.getInt("ID"), set.getInt("employeeID"), set.getInt("workDay"), set.getInt("scheduleID"), set.getTime("startTime"), set.getTime("endTime"));
     }
