@@ -35,6 +35,14 @@ public class CarLotApi {
             e2.printStackTrace();
         }
     }
+    public static void updateCarLot(CarLot c){
+        String query = String.format("UPDATE CarLot SET TotalCapacity = '%s' , Name = '%s' WHERE Address = '%s'; ", c.getCapacity(), c.getName(), c.getAddress());
+        try {
+            database.insert(query);
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+    }
 
 
     public static ArrayList<CarLot> getAllCarLots(){
