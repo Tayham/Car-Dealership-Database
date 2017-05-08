@@ -25,7 +25,7 @@ public class Main {
 
         // Create and set up the content pane.
         JComponent newContentPane = Navigation.getInstance();
-        newContentPane.setPreferredSize(new Dimension(640, 480));
+        newContentPane.setPreferredSize(new Dimension(640, 740));
         newContentPane.setOpaque(true); // content panes must be opaque
         frame.setContentPane(newContentPane);
 
