@@ -45,6 +45,6 @@ public class CarLot {
 
     @Override
     public String toString() {
-        return  String.format("Address: " + address  + ", Capacity: " + capacity + ", Name: " + name);
+        return  String.format("Address: " + address  + " Capacity: " + capacity + " Name: " + name);
     }
 }

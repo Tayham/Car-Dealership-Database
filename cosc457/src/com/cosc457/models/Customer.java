@@ -24,13 +24,11 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "SSN=" + SSN +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return  "SSN: " + SSN +
+                " First Name: " + firstName +
+                " Last Name: " + lastName +
+                " Phone: " + phone +
+                " Email: " + email;
     }
 
     public String getSSN() {
