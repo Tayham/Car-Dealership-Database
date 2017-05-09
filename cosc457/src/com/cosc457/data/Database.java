@@ -25,6 +25,7 @@ public class Database {
         try{
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3360/?user=thamil10", "thamil10", "Cosc*2jbb");
+//             connection = DriverManager.getConnection("jdbc:mysql://triton.towson.edu:3360/thamil10db", "thamil10", "Cosc*2jbb");      
             connection.setSchema("thamil10db");
         }catch(Exception e){
             System.out.println(e);
