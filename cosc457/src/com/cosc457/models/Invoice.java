@@ -25,16 +25,7 @@ public class Invoice {
 
     @Override
     public String toString() {
-        return "Invoice{" +
-                "invoiceID=" + invoiceID +
-                ", buyPrice='" + buyPrice + '\'' +
-                ", sellPrice='" + sellPrice + '\'' +
-                ", date='" + date + '\'' +
-                ", signature='" + signature + '\'' +
-                ", empID=" + empID +
-                ", ssn='" + ssn + '\'' +
-                ", vin='" + vin + '\'' +
-                '}';
+        return "ID: " + invoiceID + " Buy Price: " + buyPrice + " Sell Price: " + sellPrice+ " Date: " + date + " Signature: " + signature + " Employee ID: " + empID + " SSN: " + ssn  + " VIN: " + vin;
     }
 
     public Invoice(int invoiceID, String buyPrice, String sellPrice, String date, String signature, int empID, String ssn, String vin) {
