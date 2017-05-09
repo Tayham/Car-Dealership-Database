@@ -26,7 +26,7 @@ public class Invoice {
         this.ssn = ssn;
         this.vin = vin;
     }
-
+//
     @Override
     public String toString() {
         return "ID: " + invoiceID + " Buy Price: " + buyPrice + " Sell Price: " + sellPrice+ " Date: " + date + " Signature: " + signature + " Employee ID: " + empID + " SSN: " + ssn  + " VIN: " + vin;
