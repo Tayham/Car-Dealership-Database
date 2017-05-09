@@ -26,25 +26,24 @@ public class Car {
 
     @Override
     public String toString() {
-        return  "vin='" + vin + '\'' +
-                ", year='" + year + '\'' +
-                ", trim='" + trim + '\'' +
-                ", model='" + model + '\'' +
-                ", make='" + make + '\'' +
-                ", excolor='" + excolor + '\'' +
-                ", incolor='" + incolor + '\'' +
-                ", mileage='" + mileage + '\'' +
-                ", transmission='" + transmission + '\'' +
-                ", drivetrain='" + drivetrain + '\'' +
-                ", engine='" + engine + '\'' +
-                ", bodytype='" + bodytype + '\'' +
-                ", asking='" + asking + '\'' +
-                ", maintence='" + maintence + '\'' +
-                ", datestock='" + datestock + '\'' +
-                ", readysale='" + readysale + '\'' +
-                ", status='" + status + '\'' +
-                ", pspace='" + pspace + '\'' +
-                '}';
+        return  "VIN: " + vin +
+                " Year: " + year +
+                " Trim: " + trim +
+                " Model: " + model +
+                " Make: " + make +
+                " Exterior Color: " + excolor +
+                " Interior Color: " + incolor +
+                " Mileage: " + mileage +
+                " Transmission: " + transmission +
+                " Drive Train: " + drivetrain +
+                " Engine: " + engine +
+                " Body Type: " + bodytype +
+                " Asking Price: " + asking +
+                " Maintenance: " + maintence +
+                " Date Stock: " + datestock +
+                " Ready for Sale: " + readysale +
+                " Status: " + status +
+                " Parking Space: " + pspace;
     }
 
     public String getExcolor() {
