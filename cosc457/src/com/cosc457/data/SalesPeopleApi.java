@@ -20,6 +20,16 @@ public class SalesPeopleApi {
         }
     }
 
+    public static void updateSalespeople(SalesPeople c){
+        String query = String.format("UPDATE SalesPeople SET FirstName = '%s' , LastName = '%s' , Salary = '%s', DateofBirth = '%s', HireDate = '%s', PhoneNumber = '%s' , Email = '%s' WHERE `Employee ID` = '%s'; ", c.getFirstName(), c.getLastName(), c.getSalary(), c.getDob(), c.getHireDate(), c.getPhone(), c.getEmail(), c.getID());
+        try {
+            database.insert(query);
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+
     public static void deleteSalesPeople(SalesPeople s){
         String first_name = s.getFirstName();
         String last_name = s.getLastName();

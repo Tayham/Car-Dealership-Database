@@ -26,6 +26,16 @@ public class CarApi {
         }
     }
 
+    public static void updateCar(Car c){
+        String query = String.format("UPDATE Car SET Year = '%s' , Make = '%s' , Model = '%s' , Trim = '%s', ExteriorColor= '%s', InteriorColor= '%s', Mileage= '%s', Transmission= '%s', DriveTrain= '%s', Engine= '%s', " +
+                "BodyType= '%s', AskingPrice= '%s', MaintenanceCost= '%s', DateInStock= '%s', ReadyforSale= '%s', Status= '%s', ParkingSpaceNum= '%s' WHERE VIN = '%s'; ", c.getYear(), c.getMake(), c.getModel(), c.getTrim(), c.getExcolor(), c.getIncolor(), c.getMileage(), c.getTransmission(), c.getDrivetrain(), c.getEngine(), c.getBodytype(), c.getAsking(), c.getMaintence(), c.getDatestock(), c.getReadysale(), c.getStatus(), c.getPspace(), c.getVin());
+        try {
+            database.insert(query);
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+    }
+
 
     public static void deleteCar(Car c){
         String vin = c.getVin();

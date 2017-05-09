@@ -8,6 +8,10 @@ public class Invoice {
     private String buyPrice;
     private String sellPrice;
     private String date;
+    private String signature;
+    private int empID;
+    private String ssn;
+    private String vin;
 
     public Invoice(int idInt) {
         this.invoiceID = idInt;
@@ -39,10 +43,7 @@ public class Invoice {
         this.vin = vin;
     }
 
-    private String signature;
-    private int empID;
-    private String ssn;
-    private String vin;
+
 
     public int getInvoiceID() {
         return invoiceID;
