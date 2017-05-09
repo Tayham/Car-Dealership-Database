@@ -32,21 +32,21 @@ public class Database {
     }
 
     public void initializeDatabase() throws SQLException {
-        String check = "SHOW TABLES LIKE 'EMPLOYEE';";
-        String employeeCreation = "CREATE TABLE EMPLOYEE(ID INT AUTO_INCREMENT NOT NULL,firstName VARCHAR(45),lastName VARCHAR(45),maxHours VARCHAR(45), isManager BOOLEAN, PRIMARY KEY(ID));";
-        String employeeAvailability = "CREATE TABLE EMPLOYEE_AVAILABILITY(ID INT AUTO_INCREMENT NOT NULL,employeeID INT,weekDay INT(1),startTime time,endTime time,PRIMARY KEY(ID),FOREIGN KEY(employeeID) REFERENCES EMPLOYEE(ID));";
-        String scheduleCreation = "CREATE TABLE SCHEDULE(ID INT AUTO_INCREMENT NOT NULL,startDate date,endDate date,PRIMARY KEY(ID));";
-        String shiftCreation = "CREATE TABLE SHIFT(ID INT AUTO_INCREMENT NOT NULL,employeeID INT,scheduleID INT,workDay INT,startTime time,endTime time,PRIMARY KEY(ID),FOREIGN KEY(employeeID) REFERENCES EMPLOYEE(ID),FOREIGN KEY(scheduleID) REFERENCES SCHEDULE(ID));";
-        Statement stmt=connection.createStatement();
-        stmt.execute("use thamil10db");
-        ResultSet set = stmt.executeQuery(check);
-        boolean exists = set.next();
-        if(!exists){ //Initialize the db if it doesn't exist
-            stmt.execute(employeeCreation);
-            stmt.execute(employeeAvailability);
-            stmt.execute(scheduleCreation);
-            stmt.execute(shiftCreation);
-        }
+//        String check = "SHOW TABLES LIKE 'EMPLOYEE';";
+//        String employeeCreation = "CREATE TABLE EMPLOYEE(ID INT AUTO_INCREMENT NOT NULL,firstName VARCHAR(45),lastName VARCHAR(45),maxHours VARCHAR(45), isManager BOOLEAN, PRIMARY KEY(ID));";
+//        String employeeAvailability = "CREATE TABLE EMPLOYEE_AVAILABILITY(ID INT AUTO_INCREMENT NOT NULL,employeeID INT,weekDay INT(1),startTime time,endTime time,PRIMARY KEY(ID),FOREIGN KEY(employeeID) REFERENCES EMPLOYEE(ID));";
+//        String scheduleCreation = "CREATE TABLE SCHEDULE(ID INT AUTO_INCREMENT NOT NULL,startDate date,endDate date,PRIMARY KEY(ID));";
+//        String shiftCreation = "CREATE TABLE SHIFT(ID INT AUTO_INCREMENT NOT NULL,employeeID INT,scheduleID INT,workDay INT,startTime time,endTime time,PRIMARY KEY(ID),FOREIGN KEY(employeeID) REFERENCES EMPLOYEE(ID),FOREIGN KEY(scheduleID) REFERENCES SCHEDULE(ID));";
+//        Statement stmt=connection.createStatement();
+//        stmt.execute("use thamil10db");
+//        ResultSet set = stmt.executeQuery(check);
+//        boolean exists = set.next();
+//        if(!exists){ //Initialize the db if it doesn't exist
+//            stmt.execute(employeeCreation);
+//            stmt.execute(employeeAvailability);
+//            stmt.execute(scheduleCreation);
+//            stmt.execute(shiftCreation);
+//        }
     }
 
     public void insert(String query) throws SQLException{

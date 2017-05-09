@@ -22,6 +22,14 @@ public class InvoiceApi {
             e1.printStackTrace();
         }
     }
+    public static void updateInvoice(Invoice c){
+        String query = String.format("UPDATE Invoice SET BuyPrice = '%s', SellPrice = '%s', Date = '%s', Signature = '%s', EmployeeID = '%s', SSN = '%s', VIN = '%s' WHERE InvoiceID = '%s'; ", c.getBuyPrice(), c.getSellPrice(), c.getDate(), c.getSignature(), c.getEmpID(), c.getSsn(), c.getVin(), c.getInvoiceID());
+        try {
+            database.insert(query);
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+    }
 
     public static void deleteInvoice(Invoice s){
         int id = s.getInvoiceID();

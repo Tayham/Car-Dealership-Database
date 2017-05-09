@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Taylor on 5/8/2017.
  */
-public class AddCustomer extends JPanel{
+public class UpdateCustomer {
     private JPanel panel1;
     private JTextField ssnField;
     private JTextField firstNameField;
@@ -23,11 +23,11 @@ public class AddCustomer extends JPanel{
     private JTextField emailField;
 
 
-    public AddCustomer(){
+    public UpdateCustomer(){
         initSaveButton();
         saveButton.setEnabled(false);
 
-        firstNameField.getDocument().addDocumentListener(new DocumentListener() {
+        ssnField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 changed();
@@ -45,36 +45,7 @@ public class AddCustomer extends JPanel{
 
             private void changed()
             {
-                if (firstNameField.getText().equals("") || lastNameField.getText().equals(""))
-                {
-                    saveButton.setEnabled(false);
-                }
-                else
-                {
-                    saveButton.setEnabled(true);
-                }
-            }
-        });
-
-        lastNameField.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                changed();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                changed();
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                changed();
-            }
-
-            private void changed()
-            {
-                if (firstNameField.getText().equals("") || lastNameField.getText().equals(""))
+                if (ssnField.getText().equals(""))
                 {
                     saveButton.setEnabled(false);
                 }
@@ -102,10 +73,9 @@ public class AddCustomer extends JPanel{
 
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String newCustomerCreated = firstNameField.getText() + " " + lastNameField.getText() + " has been added to the database.";
+                String newCustomerCreated = firstNameField.getText() + " " + lastNameField.getText() + " has been updated in the database.";
                 JOptionPane.showMessageDialog(null, newCustomerCreated);
-                CustomerApi.saveCustomer(new Customer(ssnField.getText(), firstNameField.getText(), lastNameField.getText(), phoneField.getText(), emailField.getText()));
-//                CustomerApi.updateCustomer(new Customer(ssnField.getText(), firstNameField.getText(), lastNameField.getText(), phoneField.getText(), emailField.getText()));
+                CustomerApi.updateCustomer(new Customer(ssnField.getText(), firstNameField.getText(), lastNameField.getText(), phoneField.getText(), emailField.getText()));
             }
         });
     }
