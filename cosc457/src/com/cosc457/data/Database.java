@@ -24,8 +24,8 @@ public class Database {
     public void connect(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3360/?user=thamil10", "thamil10", "Cosc*2jbb");
-//             connection = DriverManager.getConnection("jdbc:mysql://triton.towson.edu:3360/thamil10db", "thamil10", "Cosc*2jbb");      
+//            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3360/?user=thamil10", "thamil10", "Cosc*2jbb");
+            connection = DriverManager.getConnection("jdbc:mysql://triton.towson.edu:3360/thamil10db", "thamil10", "Cosc*2jbb");
             connection.setSchema("thamil10db");
         }catch(Exception e){
             System.out.println(e);
@@ -33,21 +33,8 @@ public class Database {
     }
 
     public void initializeDatabase() throws SQLException {
-//        String check = "SHOW TABLES LIKE 'EMPLOYEE';";
-//        String employeeCreation = "CREATE TABLE EMPLOYEE(ID INT AUTO_INCREMENT NOT NULL,firstName VARCHAR(45),lastName VARCHAR(45),maxHours VARCHAR(45), isManager BOOLEAN, PRIMARY KEY(ID));";
-//        String employeeAvailability = "CREATE TABLE EMPLOYEE_AVAILABILITY(ID INT AUTO_INCREMENT NOT NULL,employeeID INT,weekDay INT(1),startTime time,endTime time,PRIMARY KEY(ID),FOREIGN KEY(employeeID) REFERENCES EMPLOYEE(ID));";
-//        String scheduleCreation = "CREATE TABLE SCHEDULE(ID INT AUTO_INCREMENT NOT NULL,startDate date,endDate date,PRIMARY KEY(ID));";
-//        String shiftCreation = "CREATE TABLE SHIFT(ID INT AUTO_INCREMENT NOT NULL,employeeID INT,scheduleID INT,workDay INT,startTime time,endTime time,PRIMARY KEY(ID),FOREIGN KEY(employeeID) REFERENCES EMPLOYEE(ID),FOREIGN KEY(scheduleID) REFERENCES SCHEDULE(ID));";
         Statement stmt=connection.createStatement();
         stmt.execute("use thamil10db");
-//        ResultSet set = stmt.executeQuery(check);
-//        boolean exists = set.next();
-//        if(!exists){ //Initialize the db if it doesn't exist
-//            stmt.execute(employeeCreation);
-//            stmt.execute(employeeAvailability);
-//            stmt.execute(scheduleCreation);
-//            stmt.execute(shiftCreation);
-//        }
     }
 
     public void insert(String query) throws SQLException{
@@ -80,7 +67,7 @@ public class Database {
 
     private SalesPeople parseEmployee(ResultSet set) throws SQLException {
 
-        return new SalesPeople(set.getString("FirstName"), set.getString("LastName"), set.getString("Salary"), set.getString("DateofBirth"),set.getString("HireDate"),set.getString("PhoneNumber"),set.getString("Email"));
+        return new SalesPeople(set.getInt("Employee ID"),set.getString("FirstName"), set.getString("LastName"), set.getString("Salary"), set.getString("DateofBirth"),set.getString("HireDate"),set.getString("PhoneNumber"),set.getString("Email"));
 //        return new SalesPeople(set.getInt("ID"),set.getString("FirstName"), set.getString("LastName"));
     }
     private Car parseCar(ResultSet set) throws SQLException{

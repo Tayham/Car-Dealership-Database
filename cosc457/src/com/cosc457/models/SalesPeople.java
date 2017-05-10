@@ -10,6 +10,9 @@ public class SalesPeople {
     private String phone;
     private String email;
 
+    public SalesPeople(int ID) {
+        this.ID = ID;
+    }
 
     public SalesPeople(int ID, String firstName, String lastName) {
         this.ID = ID;
@@ -116,7 +119,7 @@ public class SalesPeople {
 
     @Override
     public String toString() {
-        return "First Name: " +firstName+ " Last Name: " + lastName+ " Salary: " + salary+ " Date of Birth: " + dob +" Hire Date: " + hireDate + " Phone Number: " + phone+" Email: " + email;
+        return "ID: " + ID + " First Name: " +firstName+ " Last Name: " + lastName+ " Salary: " + salary+ " Date of Birth: " + dob +" Hire Date: " + hireDate + " Phone Number: " + phone+" Email: " + email;
     }
 }
 

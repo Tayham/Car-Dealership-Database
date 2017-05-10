@@ -15,8 +15,7 @@ import java.awt.event.ActionListener;
 
 public class DeleteEmployee extends JPanel {
     private JPanel panel1;
-    private JTextField firstNameField;
-    private JTextField lastNameField;
+    private JTextField idField;
     private JButton deleteButton;
     private JButton backButton;
 
@@ -24,7 +23,7 @@ public class DeleteEmployee extends JPanel {
         initDeleteButton();
         deleteButton.setEnabled(false);
 
-        firstNameField.getDocument().addDocumentListener(new DocumentListener() {
+        idField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 changed();
@@ -42,36 +41,7 @@ public class DeleteEmployee extends JPanel {
 
             private void changed()
             {
-                if (firstNameField.getText().equals("") || lastNameField.getText().equals(""))
-                {
-                    deleteButton.setEnabled(false);
-                }
-                else
-                {
-                    deleteButton.setEnabled(true);
-                }
-            }
-        });
-
-        lastNameField.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                changed();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                changed();
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                changed();
-            }
-
-            private void changed()
-            {
-                if (firstNameField.getText().equals("") || lastNameField.getText().equals(""))
+                if (idField.getText().equals(""))
                 {
                     deleteButton.setEnabled(false);
                 }
@@ -98,9 +68,10 @@ public class DeleteEmployee extends JPanel {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String employeeDeleted = firstNameField.getText() + " " + lastNameField.getText() + " has been removed from the database.";
+                int idInt = Integer.parseInt(idField.getText());
+                String employeeDeleted = idField.getText() + " has been removed from the database.";
                 JOptionPane.showMessageDialog(null, employeeDeleted);
-                SalesPeopleApi.deleteSalesPeople(new SalesPeople(firstNameField.getText(), lastNameField.getText()));
+                SalesPeopleApi.deleteSalesPeople(new SalesPeople(idInt));
             }
         });
     }

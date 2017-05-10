@@ -10,7 +10,7 @@ public class SalesPeopleApi {
     private static Database database = Database.getInstance();
 
     public static void saveSalesPeople(SalesPeople s){
-        String values = "'"+s.getFirstName() + "', '" + s.getLastName()+"', '"+s.getSalary() + "', '" + s.getDob()+"', '"+s.getHireDate() + "', '" + s.getPhone()+"', '"+s.getEmail() + "'";
+        String values ="'"+s.getFirstName() + "', '" + s.getLastName()+"', '"+s.getSalary() + "', '" + s.getDob()+"', '"+s.getHireDate() + "', '" + s.getPhone()+"', '"+s.getEmail() + "'";
         StringBuilder query = new StringBuilder();
         query.append("INSERT INTO SalesPeople(FirstName, LastName, Salary, DateofBirth, HireDate, PhoneNumber, Email) VALUES("+values+");");
         try {
@@ -31,10 +31,9 @@ public class SalesPeopleApi {
 
 
     public static void deleteSalesPeople(SalesPeople s){
-        String first_name = s.getFirstName();
-        String last_name = s.getLastName();
+        int id = s.getID();
         StringBuilder query = new StringBuilder();
-        query.append("DELETE FROM SalesPeople WHERE firstName ='"+first_name+"' AND lastName ='"+last_name+"';");
+        query.append("DELETE FROM SalesPeople WHERE `Employee ID` ='"+id+"';");
         try {
             database.insert(query.toString());
         } catch (SQLException e2) {
