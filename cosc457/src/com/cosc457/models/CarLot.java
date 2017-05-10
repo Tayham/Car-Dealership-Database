@@ -47,4 +47,10 @@ public class CarLot {
     public String toString() {
         return  String.format("Address: " + address  + " Capacity: " + capacity + " Name: " + name);
     }
+
+    public String toTable() {
+        return ("    <td>" + address + "</td>\n" +
+                "    <td>" + capacity + "</td>\n" +
+                "    <td>" + name + "</td>\n");
+    }
 }

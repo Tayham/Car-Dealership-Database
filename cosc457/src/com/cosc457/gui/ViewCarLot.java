@@ -30,12 +30,23 @@ public class ViewCarLot {
         return panel1;
     }
 
+
     public void load(){
         JPanel wrapper = new JPanel();
         StringBuilder content = new StringBuilder("<html>");
-        for(CarLot lot : CarLotApi.getAllCarLots()){
-            content.append("<p>" + lot.toString() + "</p><br>");
+
+        content.append("<table>\n" +
+                "  <tr>\n" +
+                "    <th>Address</th>\n" +
+                "    <th>Capacity</th>\n" +
+                "    <th>Name</th>\n" +
+                "  </tr>\n");
+        for(CarLot c : CarLotApi.getAllCarLots()){
+            content.append("<tr>\n");
+            content.append(c.toTable());
+            content.append("</tr>\n");
         }
+        content.append("</table>");
         content.append("</html>");
         wrapper.add(new JLabel(content.toString()));
         carLots.getViewport().add(wrapper);

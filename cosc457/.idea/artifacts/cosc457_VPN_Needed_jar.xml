@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="cosc457 No VPN Needed:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/cosc457_No_VPN_Needed_jar</output-path>
+  <artifact type="jar" name="cosc457 VPN Needed:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cosc457_VPN_Needed_jar</output-path>
     <root id="archive" name="cosc457.jar">
       <element id="module-output" name="cosc457" />
       <element id="extracted-dir" path="$PROJECT_DIR$/src/com/cosc457/mysql-connector-java-5.1.40-bin.jar" path-in-jar="/" />

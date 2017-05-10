@@ -24,7 +24,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return  "SSN: " + SSN +
+        return  "Customer SSN: " + SSN +
                 " First Name: " + firstName +
                 " Last Name: " + lastName +
                 " Phone: " + phone +
@@ -69,5 +69,13 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String toTable() {
+        return ("    <td>" + SSN + "</td>\n" +
+                "    <td>" + firstName + "</td>\n" +
+                "    <td>" + lastName + "</td>\n" +
+                "    <td>" + phone + "</td>\n" +
+                "    <td>" + email + "</td>\n");
     }
 }

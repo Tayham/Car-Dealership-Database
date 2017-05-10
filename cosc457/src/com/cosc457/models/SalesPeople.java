@@ -116,10 +116,20 @@ public class SalesPeople {
         return firstName + " " + lastName;
     }
 
-
     @Override
     public String toString() {
-        return "ID: " + ID + " First Name: " +firstName+ " Last Name: " + lastName+ " Salary: " + salary+ " Date of Birth: " + dob +" Hire Date: " + hireDate + " Phone Number: " + phone+" Email: " + email;
+        return "ID: " + ID + " First Name: " + firstName + " Last Name: " + lastName + " Salary: " + salary + " Date of Birth: " + dob + " Hire Date: " + hireDate + " Phone Number: " + phone + " Email: " + email;
+    }
+
+    public String toTable() {
+        return ("    <td>" + ID + "</td>\n" +
+                "    <td>" + firstName + "</td>\n" +
+                "    <td>" + lastName + "</td>\n" +
+                "    <td>" + salary + "</td>\n" +
+                "    <td>" + dob + "</td>\n" +
+                "    <td>" + hireDate + "</td>\n" +
+                "    <td>" + phone + "</td>\n" +
+                "    <td>" + email + "</td>\n");
     }
 }
 

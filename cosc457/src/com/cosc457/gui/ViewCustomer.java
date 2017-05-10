@@ -28,12 +28,25 @@ public class ViewCustomer extends JPanel {
     public JPanel getPanel(){
         return panel1;
     }
+
     public void load(){
         JPanel wrapper = new JPanel();
         StringBuilder content = new StringBuilder("<html>");
-        for(Customer s : CustomerApi.getAllCustomers()){
-            content.append("<p>" + s.toString() + "</p><br>");
+
+        content.append("<table>\n" +
+                "  <tr>\n" +
+                "    <th>Customer SSN</th>\n" +
+                "    <th>First Name</th>\n" +
+                "    <th>Last Name</th>\n" +
+                "    <th>Phone</th>\n" +
+                "    <th>Email</th>\n" +
+                "  </tr>\n");
+        for(Customer c : CustomerApi.getAllCustomers()){
+            content.append("<tr>\n");
+            content.append(c.toTable());
+            content.append("</tr>\n");
         }
+        content.append("</table>");
         content.append("</html>");
         wrapper.add(new JLabel(content.toString()));
         customers.getViewport().add(wrapper);

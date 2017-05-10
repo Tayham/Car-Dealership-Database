@@ -27,12 +27,28 @@ public class ViewInvoice extends JPanel {
     public JPanel getPanel(){
         return panel1;
     }
+
     public void load(){
         JPanel wrapper = new JPanel();
         StringBuilder content = new StringBuilder("<html>");
-        for(Invoice s : InvoiceApi.getAllInvoices()){
-            content.append("<p>" + s.toString() + "</p><br>");
+
+        content.append("<table>\n" +
+                "  <tr>\n" +
+                "    <th>Invoice ID</th>\n" +
+                "    <th>Buy Price</th>\n" +
+                "    <th>Sell Price</th>\n" +
+                "    <th>Date</th>\n" +
+                "    <th>Signature</th>\n" +
+                "    <th>Salesperson ID</th>\n" +
+                "    <th>Customer SSN</th>\n" +
+                "    <th>Vehicle VIN</th>\n" +
+                "  </tr>\n");
+        for(Invoice c : InvoiceApi.getAllInvoices()){
+            content.append("<tr>\n");
+            content.append(c.toTable());
+            content.append("</tr>\n");
         }
+        content.append("</table>");
         content.append("</html>");
         wrapper.add(new JLabel(content.toString()));
         invoices.getViewport().add(wrapper);

@@ -213,4 +213,24 @@ public class Car {
         this.pspace = pspace;
     }
 
+    public String toTable() {
+        return ("    <td>" + vin + "</td>\n" +
+                "    <td>" + year + "</td>\n" +
+                "    <td>" + trim + "</td>\n" +
+                "    <td>" + model + "</td>\n" +
+                "    <td>" + make + "</td>\n" +
+                "    <td>" + excolor + "</td>\n" +
+                "    <td>" + incolor + "</td>\n" +
+                "    <td>" + mileage + "</td>\n" +
+                "    <td>" + transmission + "</td>\n" +
+                "    <td>" + drivetrain + "</td>\n" +
+                "    <td>" + engine + "</td>\n" +
+                "    <td>" + bodytype + "</td>\n" +
+                "    <td>" + asking + "</td>\n" +
+                "    <td>" + maintence + "</td>\n" +
+                "    <td>" + datestock + "</td>\n" +
+                "    <td>" + readysale + "</td>\n" +
+                "    <td>" + status + "</td>\n" +
+                "    <td>" + pspace + "</td>\n");
+    }
 }

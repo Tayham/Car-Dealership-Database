@@ -31,6 +31,16 @@ public class Invoice {
     public String toString() {
         return "ID: " + invoiceID + " Buy Price: " + buyPrice + " Sell Price: " + sellPrice+ " Date: " + date + " Signature: " + signature + " Employee ID: " + empID + " SSN: " + ssn  + " VIN: " + vin;
     }
+    public String toTable() {
+        return ("    <td>" + invoiceID + "</td>\n" +
+                "    <td>" + buyPrice + "</td>\n" +
+                "    <td>" + sellPrice + "</td>\n" +
+                "    <td>" + date + "</td>\n" +
+                "    <td>" + signature + "</td>\n" +
+                "    <td>" + empID + "</td>\n" +
+                "    <td>" + ssn + "</td>\n" +
+                "    <td>" + vin + "</td>\n");
+    }
 
     public Invoice(int invoiceID, String buyPrice, String sellPrice, String date, String signature, int empID, String ssn, String vin) {
         this.invoiceID = invoiceID;
