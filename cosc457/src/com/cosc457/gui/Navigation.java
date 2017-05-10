@@ -102,9 +102,9 @@ public class Navigation extends JPanel{
     private void createMenu(){
         navigationPanel.setLayout(new MigLayout("center, wrap"));
 
-        SalesPeopleLabel = new JLabel("SalesPeople Options",JLabel.CENTER);
+        SalesPeopleLabel = new JLabel("Salespeople Options",JLabel.CENTER);
         addEmployeeButton       = new JButton("  Add Salespeople ");
-        UpdateEmployeeButton       = new JButton("  Update Salespeople ");
+        UpdateEmployeeButton       = new JButton("Update Salespeople");
         deleteEmployeeButton    = new JButton(" Delete Salespeople");
         viewEmployeesButton     = new JButton("  View Salespeople  ");
 
@@ -115,11 +115,10 @@ public class Navigation extends JPanel{
         viewCarButton = new JButton("  View Cars ");
 
         CarLotLabel = new JLabel("Car Lot Options",JLabel.CENTER);
-        addCarLotButton   = new JButton("  Add CarLot  ");
-        UpdateCarLotButton   = new JButton("  Update CarLot  ");
-
-        deleteCarLotButton = new JButton(" Delete CarLot");
-        viewCarLotButton = new JButton("  View CarLots ");
+        addCarLotButton   = new JButton("  Add Car Lot  ");
+        UpdateCarLotButton   = new JButton("  Update Car Lot  ");
+        deleteCarLotButton = new JButton(" Delete Car Lot");
+        viewCarLotButton = new JButton("  View Car Lots ");
 
 
         CustomerLabel = new JLabel("Customer Options",JLabel.CENTER);
@@ -132,7 +131,6 @@ public class Navigation extends JPanel{
         InvoiceLabel = new JLabel("Invoice Options",JLabel.CENTER);
         addInvoiceButton   = new JButton("  Add Invoice  ");
         UpdateInvoiceButton   = new JButton("  Update Invoice  ");
-
         deleteInvoiceButton = new JButton(" Delete Invoice");
         viewInvoiceButton = new JButton("  View Invoices ");
 
@@ -142,21 +140,18 @@ public class Navigation extends JPanel{
         navigationPanel.add(SalesPeopleLabel, "align center, width 50:150:150, height 50");
         navigationPanel.add(addEmployeeButton, "align center, width 50:150:150");
         navigationPanel.add(UpdateEmployeeButton, "align center, width 50:150:150");
-
         navigationPanel.add(deleteEmployeeButton, "align center, width 50:150:150");
         navigationPanel.add(viewEmployeesButton, "align center, width 50:150:150");
 
         navigationPanel.add(CarLabel, "align center, width 50:150:150, height 50");
         navigationPanel.add(addCarButton, "align center, width 50:150:150");
         navigationPanel.add(UpdateCarButton, "align center, width 50:150:150");
-
         navigationPanel.add(deleteCarButton, "align center, width 50:150:150");
         navigationPanel.add(viewCarButton, "align center, width 50:150:150");
 
         navigationPanel.add(CarLotLabel, "align center, width 50:150:150, height 50");
         navigationPanel.add(addCarLotButton, "align center, width 50:150:150");
         navigationPanel.add(UpdateCarLotButton, "align center, width 50:150:150");
-
         navigationPanel.add(deleteCarLotButton, "align center, width 50:150:150");
         navigationPanel.add(viewCarLotButton, "align center, width 50:150:150");
 

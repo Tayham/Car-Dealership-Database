@@ -20,7 +20,7 @@ public class Main {
 
     private static void createAndShowGUI() {
         // Create and set up the window.
-        JFrame frame = new JFrame("Auto Express Database System");
+        JFrame frame = new JFrame("Express Auto Database System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Create and set up the content pane.
